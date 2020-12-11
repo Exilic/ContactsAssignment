@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7dCUtwXRvJI21V4uzuWZ2sS2ik8guI/PEh4IRTScpT5+95bxC0vf+pOgoKfAkXF9gFhtefdFTnJ6mhQyVbQ74Q==",
+  "success": true,
+  "projectFilePath": "/Users/tobiasengberg/Projects/mvc_week4849/mvc_week4849.csproj",
+  "expectedPackageFiles": [
+    "/Users/tobiasengberg/.nuget/packages/jquery/1.8.0/jquery.1.8.0.nupkg.sha512",
+    "/Users/tobiasengberg/.nuget/packages/microsoft.jquery.unobtrusive.ajax/3.2.6/microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512"
+  ],
+  "logs": []
+}
