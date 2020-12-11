@@ -1,0 +1,20 @@
+﻿@model CreatePersonViewModel
+
+
+    <form asp-controller="People" asp-action="CreateAjax" onsubmit="CreatePerson(event, this); return false;">
+
+        <label asp-for="PersonName"></label>
+        <input asp-for="PersonName" />
+        <span asp-validation-for="PersonName"></span>
+
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber"></span>
+
+        <label asp-for="City"></label>
+        <input asp-for="City" />
+        <span asp-validation-for="City"></span>
+
+        <input class="btn btn-primary" type="submit" value="Register person" />
+
+    </form>

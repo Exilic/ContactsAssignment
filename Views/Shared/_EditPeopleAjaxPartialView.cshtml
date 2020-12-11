@@ -1,0 +1,20 @@
+﻿@model Person
+
+
+    <form asp-controller="People" asp-action="AjaxEditPost" onsubmit="PostEditedEntry(@Model.Id, event, this)">
+
+        <label asp-for="PersonName"></label>
+        <input asp-for="PersonName" value="@Model.PersonName" />
+        <span asp-validation-for="PersonName"></span>
+
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" value="@Model.PhoneNumber" />
+        <span asp-validation-for="PhoneNumber"></span>
+
+        <label asp-for="City"></label>
+        <input asp-for="City" value="@Model.City" />
+        <span asp-validation-for="City"></span>
+
+        <input class="btn btn-primary" type="submit" value="Edit post" />
+
+    </form>

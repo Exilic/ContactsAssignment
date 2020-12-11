@@ -1,0 +1,17 @@
+﻿@model Person
+
+<div id="personId-@Model.Id" class="row">
+    <div class="col">
+        <p>@Model.PersonName</p>
+    </div>
+    <div class="col">
+        <p>@Model.PhoneNumber</p>
+    </div>
+    <div class="col">
+        <p>@Model.City</p>
+    </div>
+    <div class="col">
+        <a class="btn btn-warning" onclick="EditEntryForm('@Model.Id')">Edit</a>
+        <a class="btn btn-danger" asp-action="AjaxDeletePartial" asp-controller="People" onclick="Delete('@Model.Id', event, this); return false;" >Delete</a>
+    </div>
+</div>

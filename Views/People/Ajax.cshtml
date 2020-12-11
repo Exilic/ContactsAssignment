@@ -1,0 +1,54 @@
+﻿@model PeopleViewModel
+
+@{
+    ViewData["Title"] = "People list";
+}
+
+<div id="searchArea">
+    <partial name="_CreatePeopleAjaxPartialView" model="Model.CreatePerson " />
+</div>
+
+<form asp-action="FilterAjax" asp-controller="People" method="post">
+    <label asp-for="Search"></label>
+    <input asp-for="Search" />
+    <span asp-validation-for="Search"></span>
+    <input type="submit" value="Enter string" />
+</form>
+<div id="message-area">
+    @if (ViewBag.msg != null)
+    {
+        <h3>@ViewBag.msg</h3>
+    }
+
+    @if (Model.Search != null && Model.PeopleList.Count != 0)
+    {
+        <h3>Posts filtered on: @Model.Search</h3>
+        <a class="btn btn-primary" asp-action="Ajax" asp-controller="People">Remove filter</a>
+    }
+    else if (Model.Search != null && Model.PeopleList.Count == 0)
+    {
+        <h3>No posts were found when filtered on: @Model.Search</h3>
+        <a class="btn btn-primary" asp-action="Ajax" asp-controller="People">Remove filter</a>
+    }
+</div>
+
+<div id="listOfPeople">
+    <div class="row">
+        <div class="col">
+            <h4>Name</h4>
+        </div>
+        <div class="col">
+            <h4>Phone number</h4>
+        </div>
+        <div class="col">
+            <h4>City</h4>
+        </div>
+        <div class="col">
+            <h4>Action</h4>
+        </div>
+    </div>
+    @foreach (var item in Model.PeopleList)
+    {
+        <partial name="_PeopleAjaxPartialView" model="item" />
+    }
+</div>

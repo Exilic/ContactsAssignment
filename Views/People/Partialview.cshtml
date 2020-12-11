@@ -1,0 +1,65 @@
+﻿@model PeopleViewModel
+
+@{
+    ViewData["Title"] = "People list";
+}
+
+    <form asp-action="CreatePartial" method="post">
+        <label asp-for="CreatePerson.PersonName"></label>
+        <input asp-for="CreatePerson.PersonName" />
+        <span asp-validation-for="CreatePerson.PersonName"></span>
+
+        <label asp-for="CreatePerson.PhoneNumber"></label>
+        <input asp-for="CreatePerson.PhoneNumber" />
+        <span asp-validation-for="CreatePerson.PhoneNumber"></span>
+
+        <label asp-for="CreatePerson.City"></label>
+        <input asp-for="CreatePerson.City" />
+        <span asp-validation-for="CreatePerson.City"></span>
+
+        <input type="submit" value="Register person" />
+    </form>
+
+    <form asp-action="FilterPartial" asp-controller="People" method="post">
+        <label asp-for="Search"></label>
+        <input asp-for="Search" />
+        <span asp-validation-for="Search"></span>
+        <input type="submit" value="Enter string" />
+    </form>
+ 
+
+    @if (ViewBag.msg != null)
+    {
+        <h3>@ViewBag.msg</h3>
+    }
+
+    @if (Model.Search != null && Model.PeopleList.Count != 0)
+    {
+        <h3>Posts filtered on: @Model.Search</h3>
+        <a class="btn btn-primary" asp-action="Partialview" asp-controller="People">Remove filter</a>
+    }
+    else if (Model.Search != null && Model.PeopleList.Count == 0)
+    {
+        <h3>No posts were found when filtered on: @Model.Search</h3>
+        <a class="btn btn-primary" asp-action="Partialview" asp-controller="People">Remove filter</a>
+    }
+
+
+    <div class="row">
+        <div class="col">
+            <h4>Name</h4>
+        </div>
+        <div class="col">
+            <h4>Phone number</h4>
+        </div>
+        <div class="col">
+            <h4>City</h4>
+        </div>
+        <div class="col">
+            <h4>Action</h4>
+        </div>
+    </div>
+    @foreach (var item in Model.PeopleList)
+    {
+        <partial name="_PeoplePartialView" model="item" />
+    }
