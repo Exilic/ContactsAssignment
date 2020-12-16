@@ -12,8 +12,12 @@ namespace mvc_week4849.Controllers
     public class PeopleController : Controller
     {
 
-        private IPeopleService _peopleService = new PeopleService();
+        private IPeopleService _peopleService;
 
+        public PeopleController(IPeopleService peopleService)
+        {
+            _peopleService = peopleService;
+        }
 
         [HttpGet]
         public IActionResult Index()
@@ -39,7 +43,8 @@ namespace mvc_week4849.Controllers
                return RedirectToAction(nameof(Index));
            }
 
-           return View("Index", peopleViewModel); 
+
+           return View("Index", _peopleService.All()); 
         }
 
       
@@ -75,7 +80,7 @@ namespace mvc_week4849.Controllers
 
               return RedirectToAction(nameof(Partialview));
           }
-          return View("Partialview", peopleViewModel);
+          return View("Partialview", _peopleService.All());
        }
 
        

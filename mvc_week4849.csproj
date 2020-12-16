@@ -9,8 +9,14 @@
     <Folder Include="Models\Data\" />
     <Folder Include="Models\Services\" />
     <Folder Include="Models\ViewModels\" />
+    <Folder Include="Models\Database\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
   </ItemGroup>
 </Project>

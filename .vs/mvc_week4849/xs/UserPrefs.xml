@@ -1,17 +1,28 @@
-﻿<Properties StartupConfiguration="{213945BF-6D04-43C4-827B-7189DA39860F}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{213945BF-6D04-43C4-827B-7189DA39860F}|Default">
   <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="Controllers/PeopleController.cs" Line="15" Column="46" />
+      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Models/Services/PeopleService.cs" />
+      <File FileName="Models/Database/PeopleDbContext.cs" Line="2" Column="1" />
+      <File FileName="appsettings.json" Line="10" Column="25" />
+      <File FileName="Startup.cs" Line="32" Column="79" />
+      <File FileName="Models/Data/DatabasePeopleRepo.cs" Line="29" Column="49" />
+      <File FileName="Models/Data/InMemoryPeopleRepo.cs" />
+      <File FileName="Models/Data/IPeopleRepo.cs" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="mvc_week4849" expanded="True">
             <Node name="mvc_week4849" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="Data" expanded="True" />
-                <Node name="Services" expanded="True" />
-                <Node name="ViewModels" expanded="True">
-                  <Node name="PeopleViewModel.cs" selected="True" />
-                </Node>
+                <Node name="Database" expanded="True" />
               </Node>
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
@@ -22,6 +33,7 @@
               <Node name="wwwroot" expanded="True">
                 <Node name="js" expanded="True" />
               </Node>
+              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>

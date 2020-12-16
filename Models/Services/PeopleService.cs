@@ -10,7 +10,12 @@ namespace mvc_week4849.Models.Services
     public class PeopleService : IPeopleService
     {
 
-        IPeopleRepo _peopleRepo = new InMemoryPeopleRepo();
+        IPeopleRepo _peopleRepo;
+
+        public PeopleService(IPeopleRepo peopleRepo)
+        {
+            _peopleRepo = peopleRepo;
+        }
 
         public Person Add(CreatePersonViewModel createPersonViewModel)
         {
