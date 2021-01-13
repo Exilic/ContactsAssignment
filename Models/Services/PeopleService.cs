@@ -11,15 +11,21 @@ namespace mvc_week4849.Models.Services
     {
 
         IPeopleRepo _peopleRepo;
+        ICitiesRepo _citiesRepo;
+        ILanguagesRepo _languagesRepo;
 
-        public PeopleService(IPeopleRepo peopleRepo)
+        public PeopleService(IPeopleRepo peopleRepo, ICitiesRepo citiesRepo, ILanguagesRepo languagesRepo)
         {
             _peopleRepo = peopleRepo;
+            _citiesRepo = citiesRepo;
+            _languagesRepo = languagesRepo;
         }
 
         public Person Add(CreatePersonViewModel createPersonViewModel)
         {
-            return _peopleRepo.Create(createPersonViewModel.PersonName, createPersonViewModel.PhoneNumber, createPersonViewModel.City);
+            City city = _citiesRepo.Read(createPersonViewModel.CityId);
+            Language language = _languagesRepo.Read(createPersonViewModel.LanguageId);
+            return _peopleRepo.Create(createPersonViewModel.PersonName, createPersonViewModel.PhoneNumber, city, language);
         }
 
         
@@ -35,7 +41,7 @@ namespace mvc_week4849.Models.Services
 
         public Person Edit(int id, Person person)
         {
-            Person editedPerson = new Person() { Id = id, PersonName = person.PersonName, PhoneNumber = person.PhoneNumber, City = person.City };
+            Person editedPerson = new Person() { Id = id, PersonName = person.PersonName, PhoneNumber = person.PhoneNumber, City = person.City, PersonLanguages = person.PersonLanguages};
        
             return _peopleRepo.Update(editedPerson);
         }
@@ -53,7 +59,10 @@ namespace mvc_week4849.Models.Services
             {
                 foreach (var item in _peopleRepo.Read())
                 {
-                    if (item.PersonName.Contains(search.Search) || item.City.Contains(search.Search))
+                    if (item.PersonName.Contains(search.Search)
+                        || item.PhoneNumber.Contains(search.Search)
+                        || item.City.CityName.Contains(search.Search))
+                    //if (item.PersonName.Contains(search.Search))
                     {
                         search.PeopleList.Add(item);
                     }

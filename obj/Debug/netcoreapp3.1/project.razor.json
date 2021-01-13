@@ -14437,6 +14437,21 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/tobiasengberg/Projects/mvc_week4849/Views/Countries/Index.cshtml",
+      "TargetPath": "Views\\Countries\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tobiasengberg/Projects/mvc_week4849/Views/Cities/Index.cshtml",
+      "TargetPath": "Views\\Cities\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tobiasengberg/Projects/mvc_week4849/Views/Languages/Index.cshtml",
+      "TargetPath": "Views\\Languages\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/tobiasengberg/Projects/mvc_week4849/Views/Shared/_PeopleAjaxStrippedPartialView.cshtml",
       "TargetPath": "Views\\Shared\\_PeopleAjaxStrippedPartialView.cshtml",
       "FileKind": "mvc"

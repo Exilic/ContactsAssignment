@@ -75,3 +75,6 @@
 /Users/tobiasengberg/Projects/mvc_week4849/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
 /Users/tobiasengberg/Projects/mvc_week4849/bin/Debug/netcoreapp3.1/System.Xml.XPath.XmlDocument.dll
 /Users/tobiasengberg/Projects/mvc_week4849/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/Users/tobiasengberg/Projects/mvc_week4849/obj/Debug/netcoreapp3.1/Razor/Views/Cities/Index.cshtml.g.cs
+/Users/tobiasengberg/Projects/mvc_week4849/obj/Debug/netcoreapp3.1/Razor/Views/Countries/Index.cshtml.g.cs
+/Users/tobiasengberg/Projects/mvc_week4849/obj/Debug/netcoreapp3.1/Razor/Views/Languages/Index.cshtml.g.cs

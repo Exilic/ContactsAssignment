@@ -1,20 +1,25 @@
-﻿@model CreatePersonViewModel
+﻿@model PeopleViewModel
 
 
-    <form asp-controller="People" asp-action="CreateAjax" onsubmit="CreatePerson(event, this); return false;">
+<form asp-controller="People" asp-action="CreateAjax" onsubmit="CreatePerson(event, this); return false;">
 
-        <label asp-for="PersonName"></label>
-        <input asp-for="PersonName" />
-        <span asp-validation-for="PersonName"></span>
+    <label asp-for="CreatePerson.PersonName"></label>
+    <input asp-for="CreatePerson.PersonName" />
+    <span asp-validation-for="CreatePerson.PersonName"></span>
 
-        <label asp-for="PhoneNumber"></label>
-        <input asp-for="PhoneNumber" />
-        <span asp-validation-for="PhoneNumber"></span>
+    <label asp-for="CreatePerson.PhoneNumber"></label>
+    <input asp-for="CreatePerson.PhoneNumber" />
+    <span asp-validation-for="CreatePerson.PhoneNumber"></span>
 
-        <label asp-for="City"></label>
-        <input asp-for="City" />
-        <span asp-validation-for="City"></span>
+    <label asp-for="CreatePerson.CityId"></label>
+    <select asp-for="CreatePerson.CityId">
+        @foreach (var item in Model.CitiesList)
+        {
+            <option value="@item.Id">@item.CityName</option>           
+        }
+    </select>
+    <span asp-validation-for="CreatePerson.CityId"></span>
 
-        <input class="btn btn-primary" type="submit" value="Register person" />
+    <input class="btn btn-primary" type="submit" value="Register person" />
 
-    </form>
+</form>

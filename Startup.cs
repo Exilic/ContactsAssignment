@@ -30,8 +30,19 @@ namespace mvc_week4849
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PeopleDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddScoped<IPeopleService, PeopleService>();
-            services.AddScoped<IPeopleRepo, InMemoryPeopleRepo>();
+            services.AddScoped<IPeopleRepo, DatabasePeopleRepo>();
+
+            services.AddScoped<ICitiesService, CitiesService>();
+            services.AddScoped<ICitiesRepo, DatabaseCitiesRepo>();
+
+            services.AddScoped<ICountriesService, CountriesService>();
+            services.AddScoped<ICountriesRepo, DatabaseCountriesRepo>();
+
+            services.AddScoped<ILanguagesService, LanguagesService>();
+            services.AddScoped<ILanguagesRepo, DatabaseLanguagesRepo>();
+
             services.AddMvc();
         }
 

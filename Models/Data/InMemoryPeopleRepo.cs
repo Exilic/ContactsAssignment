@@ -11,7 +11,7 @@ namespace mvc_week4849.Models.Data
         private static List<Person> peopleList = new List<Person>();
         private static int idCounter = 0;
 
-        public Person Create(string personName, string phoneNumber, string city)
+        public Person Create(string personName, string phoneNumber, City city, Language Language)
         {
             Person person = new Person(++idCounter, personName, phoneNumber, city);
             peopleList.Add(person);

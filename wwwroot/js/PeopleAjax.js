@@ -6,7 +6,7 @@ function CreatePerson(event, contents) {
         {
             PersonName: contents.PersonName.value,
             PhoneNumber: contents.PhoneNumber.value,
-            City: contents.City.value
+            CityId: contents.CityId.value
         },
         function (data) {
             if (data.includes('onsubmit')) {
@@ -20,7 +20,6 @@ function CreatePerson(event, contents) {
 
 
 function EditEntryForm(entryId) {
-
     $.get("/People/AjaxEditPost/" + entryId, function (partial) {
         $("#personId-" + entryId).html(partial);
     });
@@ -33,14 +32,13 @@ function PostEditedEntry(id, event, contents) {
             PersonName: contents.PersonName.value,
             PhoneNumber: contents.PhoneNumber.value,
             City: contents.City.value,
-            Id: id
+            Id: id,
+            PersonLanguages: contents.PersonLanguages.value
         },
         function (data) {
             $("#personId-"+id).html(data);
         }
     );
-        
-
 }
 
 function Delete(id, event, contents) {

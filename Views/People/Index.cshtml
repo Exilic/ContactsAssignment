@@ -4,21 +4,26 @@
     ViewData["Title"] = "People list";
 }
 
-    <form asp-controller="People" asp-action="Create" method="post">
-        <label asp-for="CreatePerson.PersonName"></label>
-        <input asp-for="CreatePerson.PersonName" />
-        <span asp-validation-for="CreatePerson.PersonName"></span>
+<form asp-controller="People" asp-action="Create" method="post">
+    <label asp-for="CreatePerson.PersonName"></label>
+    <input asp-for="CreatePerson.PersonName" />
+    <span asp-validation-for="CreatePerson.PersonName"></span>
 
-        <label asp-for="CreatePerson.PhoneNumber"></label>
-        <input asp-for="CreatePerson.PhoneNumber" />
-        <span asp-validation-for="CreatePerson.PhoneNumber"></span>
+    <label asp-for="CreatePerson.PhoneNumber"></label>
+    <input asp-for="CreatePerson.PhoneNumber" />
+    <span asp-validation-for="CreatePerson.PhoneNumber"></span>
 
-        <label asp-for="CreatePerson.City"></label>
-        <input asp-for="CreatePerson.City" />
-        <span asp-validation-for="CreatePerson.City"></span>
+    <label asp-for="CreatePerson.CityId"></label>
+    <select asp-for="CreatePerson.CityId">
+        @foreach (var item in Model.CitiesList)
+        {
+            <option value="@item.Id">@item.CityName</option>
+        }
+    </select>
+    <span asp-validation-for="CreatePerson.CityId"></span>
 
-        <input type="submit" value="Register person" />
-    </form>
+    <input type="submit" value="Register person" />
+</form>
 
     <form asp-action="Filter" asp-controller="People" method="post">
         <label asp-for="Search"></label>
@@ -49,19 +54,33 @@
                 <th>Name</th>
                 <th>Phone number</th>
                 <th>City</th>
+                <th>Language</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var person in Model.PeopleList)
             {
-                <tr>
-                    <td>@person.PersonName</td>
-                    <td>@person.PhoneNumber</td>
-                    <td>@person.City</td>
-                    <td><a class="btn btn-danger" asp-action="Delete" asp-controller="People" asp-route-id="@person.Id">Delete</a></td>
+            <tr>
+                <td>@person.PersonName</td>
+                <td>@person.PhoneNumber</td>
+                <td>@person.City.CityName</td>
+                @if (person.PersonLanguages.Count > 0)
+                {
+                    <td>
+                        @foreach (var language in person.PersonLanguages)
+                        {
+                            @language.Language.LanguageName @:<br />
+                        }
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                <td><a class="btn btn-danger" asp-action="Delete" asp-controller="People" asp-route-id="@person.Id">Delete</a></td>
 
-                </tr>
+            </tr>
             }
         </tbody>
     </table>

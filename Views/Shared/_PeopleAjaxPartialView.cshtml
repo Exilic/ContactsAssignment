@@ -8,10 +8,23 @@
         <p>@Model.PhoneNumber</p>
     </div>
     <div class="col">
-        <p>@Model.City</p>
+        <p>@Model.City.CityName</p>
     </div>
+    @if (@Model.PersonLanguages.Count > 0)
+    {
+        <div class="col">
+            @foreach (var language in @Model.PersonLanguages)
+            {
+                @language.Language.LanguageName @:<br />
+            }
+            </div>
+        }
+        else
+        {
+            <div class="col"></div>
+    }
     <div class="col">
         <a class="btn btn-warning" onclick="EditEntryForm('@Model.Id')">Edit</a>
-        <a class="btn btn-danger" asp-action="AjaxDeletePartial" asp-controller="People" onclick="Delete('@Model.Id', event, this); return false;" >Delete</a>
+        <a class="btn btn-danger" asp-action="AjaxDeletePartial" asp-controller="People" onclick="Delete('@Model.Id', event, this); return false;">Delete</a>
     </div>
 </div>

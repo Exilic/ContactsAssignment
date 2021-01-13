@@ -1,42 +1,65 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{213945BF-6D04-43C4-827B-7189DA39860F}|Default">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{213945BF-6D04-43C4-827B-7189DA39860F}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/People/Ajax.cshtml">
     <Files>
-      <File FileName="Controllers/PeopleController.cs" Line="15" Column="46" />
-      <File FileName="Controllers/HomeController.cs" />
-      <File FileName="Models/Services/PeopleService.cs" />
-      <File FileName="Models/Database/PeopleDbContext.cs" Line="2" Column="1" />
-      <File FileName="appsettings.json" Line="10" Column="25" />
-      <File FileName="Startup.cs" Line="32" Column="79" />
-      <File FileName="Models/Data/DatabasePeopleRepo.cs" Line="29" Column="49" />
-      <File FileName="Models/Data/InMemoryPeopleRepo.cs" />
-      <File FileName="Models/Data/IPeopleRepo.cs" />
+      <File FileName="Models/Services/LanguagesService.cs" Line="1" Column="1" />
+      <File FileName="Models/Language.cs" Line="22" Column="1" />
+      <File FileName="Models/Data/DatabaseLanguagesRepo.cs" Line="51" Column="39" />
+      <File FileName="Models/Database/PeopleDbContext.cs" Line="32" Column="1" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="Models/Data/DatabasePeopleRepo.cs" Line="66" Column="52" />
+      <File FileName="Models/PersonLanguage.cs" Line="7" Column="30" />
+      <File FileName="Models/Person.cs" Line="38" Column="1" />
+      <File FileName="Controllers/CitiesController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/CountriesController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/LanguagesController.cs" Line="1" Column="1" />
+      <File FileName="Views/Languages/Index.cshtml" Line="60" Column="18" />
+      <File FileName="Views/Countries/Index.cshtml" Line="57" Column="1" />
+      <File FileName="Views/People/Index.cshtml" Line="80" Column="18" />
+      <File FileName="Models/ViewModels/CreatePersonViewModel.cs" Line="1" Column="1" />
+      <File FileName="Controllers/PeopleController.cs" Line="177" Column="58" />
+      <File FileName="Models/Services/PeopleService.cs" Line="44" Column="144" />
+      <File FileName="Models/Data/IPeopleRepo.cs" Line="17" Column="1" />
+      <File FileName="Models/Data/InMemoryPeopleRepo.cs" Line="14" Column="97" />
+      <File FileName="Views/Shared/_EditPeopleAjaxPartialView.cshtml" Line="41" Column="1" />
+      <File FileName="Views/Shared/_CreatePeopleAjaxPartialView.cshtml" Line="26" Column="1" />
+      <File FileName="Models/ViewModels/PeopleViewModel.cs" Line="28" Column="2" />
+      <File FileName="Views/People/Ajax.cshtml" Line="48" Column="25" />
+      <File FileName="Views/Shared/_PeopleAjaxPartialView.cshtml" Line="12" Column="11" />
+      <File FileName="Views/People/Partialview.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Shared/_PeopleAjaxStrippedPartialView.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Shared/_PeopleAjaxView.cshtml" Line="1" Column="1" />
+      <File FileName="wwwroot/js/PeopleAjax.js" Line="23" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="mvc_week4849" expanded="True">
             <Node name="mvc_week4849" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="Data" expanded="True" />
                 <Node name="Database" expanded="True" />
+                <Node name="Services" expanded="True" />
+                <Node name="ViewModels" expanded="True" />
               </Node>
-              <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="People" expanded="True" />
+                <Node name="Cities" expanded="True" />
+                <Node name="Countries" expanded="True" />
+                <Node name="Languages" expanded="True" />
+                <Node name="People" expanded="True">
+                  <Node name="Ajax.cshtml" selected="True" />
+                </Node>
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="js" expanded="True" />
               </Node>
-              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
